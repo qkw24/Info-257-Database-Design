@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  year: 2014-12-08
+  capacity: 1
+  maintenance_status: MyString
+
+two:
+  type: 
+  year: 2014-12-08
+  capacity: 1
+  maintenance_status: MyString
