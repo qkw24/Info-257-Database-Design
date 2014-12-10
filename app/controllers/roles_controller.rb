@@ -1,6 +1,9 @@
 class RolesController < ApplicationController
   def create
-    @role = Role.create!(params[:id])
+    @role = Role.new(params[:role])
+    @role.save!
+    flash[:notice] = "#{@role.RoleName} was successfully created."
+    redirect_to '/roles#index'
   end
 
   def new
@@ -8,12 +11,17 @@ class RolesController < ApplicationController
   end
 
   def show
+    @role = Role.find(params[:id])
   end
 
   def index
-    @role = Role.all
+    @roles = Role.all
   end
 
   def destroy
+    @role = Role.find(params[:id])
+    @role.destroy
+    flash[:notice] = "#{@role.RoleName} was successfully removed."
+    redirect_to '/roles#index'
   end
 end

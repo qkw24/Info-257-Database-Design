@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Register</title>
+<title>Employee</title>
 <head>
   <meta charset="utf-8">
   <title>Styles Conference</title>
@@ -35,7 +35,7 @@
             <%= f.label :Email %>
             <%= f.text_field :Email, class: "col-1-3" %>
 
-            <%= f.label :Role, "Role" %>
+            <%= f.label :role_id, "Position" %>
             <%= f.select(:id, @user_options) %>
 
             <%= f.label :Pay, "Paid Rate (per hour)" %>
@@ -43,8 +43,23 @@
 
             <%= f.label :Address %>
             <%= f.text_field :Address, class: "col-1-3" %>
-            </fieldset>
-            <%= f.submit "Done", class: "btn btn-default" %>
+
+            <h1>Schedule</h1>
+            <%=form_for(@employee_schedule) do |j| %>
+
+                <%= j.label :startTime, "Start Time" %>
+                <%= j.time_select :startTime %>
+
+                <%= j.label :endTime, "End Time" %>
+                <%= j.time_select :endTime %>
+
+
+                <%= j.label :bus_id, "Bus ID" %>
+                <%= j.text_field :bus_id %>
+                </fieldset>
+                <%= j.submit "Done", class: "btn btn-default" %>
+                <% end %>
+
         <% end %>
   </div>
 </section>

@@ -12,16 +12,30 @@
 <%= render 'layouts/header' %>
 <section class="row-alt">
   <div class="lead container">
-    <h1>Positions</h1>
+    <h1>Add Bus</h1>
   </div>
 </section>
 
 <section class="row">
   <div class="grid">
     <fieldset class="register-group" >
-      <%=form_for(@role) do |f| %>
-          <%= f.label :RoleName, "Role Name" %>
-          <%= f.text_field :RoleName, class: "col-1-3" %>
+      <%=form_for(@bus) do |f| %>
+          <%= f.label :type, "Type" %>
+          <%= f.text_field :type %>
+
+          <%= f.label :year, "Year" %>
+          <%= f.select :year, (Time.zone.now.year - 35)..(Time.zone.now.year + 1) %>
+
+          <%= f.label :capacity, "Capacity" %>
+          <%= f.text_field :capacity %>
+
+          <%= f.label :maintenance, "Maintenance Notes" %>
+          <%= f.text_field :maintenance_status %>
+
+          <h1>Assign a route</h1>
+
+          <%= f.label :role_id, "Choose a route" %>
+          <%= f.select(:id, @user_options) %>
 
           </fieldset>
           <%= f.submit "Done", class: "btn btn-default" %>

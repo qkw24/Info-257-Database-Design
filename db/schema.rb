@@ -11,22 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141209014417) do
+ActiveRecord::Schema.define(:version => 20141210012320) do
 
   create_table "bus_schedules", :force => true do |t|
     t.float    "price"
     t.time     "arrival_time"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "stop_id"
+    t.integer  "route_id"
   end
 
   create_table "buses", :force => true do |t|
     t.string   "type"
-    t.date     "year"
+    t.integer  "year"
     t.integer  "capacity"
     t.string   "maintenance_status"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "route_id"
   end
 
   create_table "employee_schedules", :force => true do |t|
@@ -34,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20141209014417) do
     t.time     "endTime"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "bus_id"
   end
 
   create_table "employees", :force => true do |t|
@@ -45,8 +49,9 @@ ActiveRecord::Schema.define(:version => 20141209014417) do
     t.string   "Address"
     t.string   "Email"
     t.integer  "role_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "schedule_id"
   end
 
   create_table "roles", :force => true do |t|

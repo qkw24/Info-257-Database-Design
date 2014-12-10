@@ -1,15 +1,9 @@
 PublicTransport::Application.routes.draw do
-
-  get "roles/create"
-
-  get "roles/new"
-
-  get "roles/show"
-
-  get "roles/index"
-
-  get "roles/destroy"
-
   resources :employees
-
+  resources :roles
+  resources :employee_schedules
+  resources :buses
+  resources :routes
+  resources :stops
+  resources :bus_schedules
 end
