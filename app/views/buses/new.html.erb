@@ -18,18 +18,24 @@
 
 <section class="row">
   <div class="grid">
+    <h1>Bus Info</h1>
     <fieldset class="register-group" >
       <%=form_for(@bus) do |f| %>
-          <%= f.label :type, "Type" %>
-          <%= f.text_field :type %>
+          <%= f.label :bus_type, "Type" %>
+          <%= f.text_field :bus_type %>
 
           <%= f.label :year, "Year" %>
           <%= f.select :year, (Time.zone.now.year - 35)..(Time.zone.now.year + 1) %>
-
+          </br>
           <%= f.label :capacity, "Capacity" %>
           <%= f.text_field :capacity %>
 
-          <%= f.label :maintenance, "Maintenance Notes" %>
+          <%= f.label :capacity, "License Plate" %>
+          <%= f.text_field :license_plate %>
+
+          </br>
+          <%= f.label :maintenance, "Maintenance Notes", id:"notes" %>
+          </br>
           <%= f.text_field :maintenance_status %>
 
           <h1>Assign a route</h1>
