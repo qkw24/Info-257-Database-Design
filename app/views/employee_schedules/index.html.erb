@@ -30,7 +30,7 @@
 
 <section class="row-alt">
   <div class="lead container">
-    <h1>Buses</h1>
+    <h1>Employee Schedules</h1>
   </div>
 </section>
 <section class="row">
@@ -38,54 +38,55 @@
 
     <table>
       <tr>
+        <th>Name
+          <% @employee_schedules.each do |r| %>
+              <p>
+                <% @employees.each do |i| %>
+                    <% if i.schedule_id == r.id %>
+                        <%= i.FirstName%>
+                        <%= i.LastName %>
+                    <% end %>
+                <% end %>
+              </p>
+          <% end %>
+        </th>
+
+        <th>Start Time
+          <% @employee_schedules.each do |r| %>
+              <p>
+                <% @employees.each do |i| %>
+                    <% if i.schedule_id == r.id %>
+                        <%= r.startTime.to_s(:time) %>
+                    <% end %>
+                <% end %>
+              </p>
+          <% end %>
+        </th>
+
+        <th>End Time
+          <% @employee_schedules.each do |r| %>
+              <p>
+                <% @employees.each do |i| %>
+                    <% if i.schedule_id == r.id %>
+                        <%= r.endTime.to_s(:time) %>
+                    <% end %>
+                <% end %>
+              </p>
+          <% end %>
+        </th>
+
         <th>Bus ID
-          <% @buses.each do |r| %>
+          <% @employee_schedules.each do |r| %>
               <p>
-                <%= r.id %>
+                <% @employees.each do |i| %>
+                    <% if i.schedule_id == r.id %>
+                        <%= r.bus_id %>
+                    <% end %>
+                <% end %>
               </p>
           <% end %>
         </th>
-        <th>License Plate
-          <% @buses.each do |r| %>
-              <p>
-                <%= r.license_plate %>
-              </p>
-          <% end %>
-        </th>
-        <th>Type
-          <% @buses.each do |r| %>
-              <p>
-                <%= r.bus_type %>
-              </p>
-          <% end %>
-        </th>
-
-        <th>Year
-          <% @buses.each do |r| %>
-              <p>
-                <%= r.year %>
-              </p>
-          <% end %>
-        </th>
-        <th>Capacity
-          <% @buses.each do |r| %>
-              <p>
-                <%= r.capacity %>
-              </p>
-          <% end %>
-        </th>
-
-        <th>Maintenance Notes
-          <div id = "content">
-            <% @buses.each do |r| %>
-                <p>
-                  <%= r.maintenance_status %>
-                </p>
-            <% end %>
-          </div>
-        </th>
-      </tr>
-
+        </tr>
       </tbody>
     </table>
   </div>

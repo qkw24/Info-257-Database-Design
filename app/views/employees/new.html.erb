@@ -31,7 +31,7 @@
             <%= f.text_field :LastName, class: "name", id: "last"%>
             </br>
             <%= f.label :Birthday, "Date of Birth" %>
-            <%= f.date_select :Birthday, class: "col-1-3" %>
+            <%= f.date_select(:Birthday, start_year: 1939, end_year: 1998)%>
             </br>
             <%= f.label :Email %>
             <%= f.text_field :Email, class: "col-1-3" %>

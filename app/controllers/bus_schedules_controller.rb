@@ -19,6 +19,8 @@ class BusSchedulesController < ApplicationController
 
   def index
     @bus_schedules = BusSchedule.all
+    @bus_stops = Stop.all
+    @bus_routes = Route.all
   end
 
   def destroy

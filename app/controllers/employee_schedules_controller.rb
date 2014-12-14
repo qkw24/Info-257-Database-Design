@@ -7,6 +7,11 @@ class EmployeeSchedulesController < ApplicationController
 
   end
 
+  def index
+    @employee_schedules = EmployeeSchedule.all
+    @employees = Employee.all
+  end
+
   def update
   end
 end

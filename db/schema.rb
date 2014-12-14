@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141211001123) do
+ActiveRecord::Schema.define(:version => 20141214013920) do
 
   create_table "bus_schedules", :force => true do |t|
     t.float    "price"
@@ -63,8 +63,9 @@ ActiveRecord::Schema.define(:version => 20141211001123) do
 
   create_table "routes", :force => true do |t|
     t.string   "Name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "destination"
   end
 
   create_table "stops", :force => true do |t|

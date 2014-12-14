@@ -1,1 +1,120 @@
-<%= @employees %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Public Transit</title>
+  <%= stylesheet_link_tag "main" %>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+</head>
+
+<body>
+
+<!-- Header -->
+
+<header class="primary-header container group">
+
+  <h1 class="logo">
+    <a href="index.html">Public <br> Transit</a>
+  </h1>
+
+  <h3 class="tagline">City of Berkeley, CA</h3>
+
+  <nav class="nav primary-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<section class="row-alt">
+  <div class="lead container">
+    <h1>Employees</h1>
+  </div>
+</section>
+<section class="row">
+  <div class="container">
+
+      <table>
+        <tr>
+          <th>First Name
+          <% @employees.each do |r| %>
+              <p>
+                <%= r.FirstName %>
+              </p>
+          <% end %>
+          </th>
+          <th>Middle Name
+            <% @employees.each do |r| %>
+                <p>
+                  <%= r.MiddleName %>
+                </p>
+            <% end %>
+          </th>
+          <th>Last Name
+            <% @employees.each do |r| %>
+                <p>
+                  <%= r.LastName %>
+                </p>
+            <% end %>
+          </th>
+
+          <th>Pay
+          <% @employees.each do |r| %>
+              <p>
+                <%= r.Pay %>
+              </p>
+          <% end %>
+          </th>
+          <th>Birthday
+          <% @employees.each do |r| %>
+              <p>
+                <%= r.Birthday %>
+              </p>
+          <% end %>
+          </th>
+
+          <th>Address
+            <div id = "content">
+          <% @employees.each do |r| %>
+              <p>
+                <%= r.Address %>
+              </p>
+          <% end %>
+                </div>
+          </th>
+          <th>Email
+          <% @employees.each do |r| %>
+              <p>
+                <%= r.Email %>
+              </p>
+          <% end %>
+          </th>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- Footer -->
+
+<footer class="primary-footer container group">
+
+  <small>&copy; Styles Conference</small>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+    </ul>
+  </nav>
+
+</footer>
+
+</body>
+</html>
+<style>
+
+</style>
