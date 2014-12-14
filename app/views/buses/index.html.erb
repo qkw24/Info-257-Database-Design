@@ -12,21 +12,7 @@
 
 <!-- Header -->
 
-<header class="primary-header container group">
-
-  <h1 class="logo">
-    <a href="index.html">Public <br> Transit</a>
-  </h1>
-
-  <h3 class="tagline">City of Berkeley, CA</h3>
-
-  <nav class="nav primary-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-    </ul>
-  </nav>
-
-</header>
+<%= render 'layouts/header' %>
 
 <section class="row-alt">
   <div class="lead container">
@@ -84,9 +70,17 @@
             <% end %>
           </div>
         </th>
+        <th>
+          <% @buses.each do |r| %>
+              <p>
+                <%= button_to 'Delete', r, method: :delete %>
+              </p>
+          <% end %>
+        </th>
       </tr>
 
       </tbody>
+      <%= link_to 'Add bus', new_bus_path, class: "btn btn-default" %>
     </table>
   </div>
 </section>
@@ -94,17 +88,7 @@
 
 <!-- Footer -->
 
-<footer class="primary-footer container group">
-
-  <small>&copy; Styles Conference</small>
-
-  <nav class="nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-    </ul>
-  </nav>
-
-</footer>
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

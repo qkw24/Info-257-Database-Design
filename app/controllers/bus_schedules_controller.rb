@@ -24,5 +24,9 @@ class BusSchedulesController < ApplicationController
   end
 
   def destroy
+    @bus_schedule = BusSchedule.find(params[:id])
+    @bus_schedule.destroy
+    #flash[:notice] = "#{@bus_schedule.name} was successfully removed."
+    redirect_to '/bus_schedules#index'
   end
 end
