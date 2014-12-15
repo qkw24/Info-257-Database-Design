@@ -3,7 +3,7 @@ class StopsController < ApplicationController
     @stop = Stop.new(params[:stop])
     @stop.save!
     flash[:notice] = "#{@stop.name} was successfully created."
-    redirect_to '/stops#index'
+    redirect_to root_path
   end
 
   def new

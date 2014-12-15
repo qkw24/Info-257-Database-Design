@@ -63,7 +63,7 @@
   .container,
   .grid {
     margin: 0 auto;
-    width: 1200px;
+    width: 1400px;
   }
   .container {
     padding-left: 30px;
@@ -393,11 +393,14 @@
     font-weight: 400;
       margin-left: 20px;
   }
+#m_notes {
+    width: 230px;
+}
 #employee_Pay {
     width: 60px;
 }
 #employee_Address {
-    width: 400px;
+    width: 220px;
 }
   .register-group input,
   .register-group select,
